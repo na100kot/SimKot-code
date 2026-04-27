@@ -13,7 +13,7 @@ class TestMusicSalon(unittest.TestCase):
         self.assertTrue(os.path.exists('music_salon.db'))
 
     def test_add_user(self):
-        add_user('test_admin', 'admin')
+        add_user('test_admin', 'some_hash_value', 'admin')
         conn = sqlite3.connect('music_salon.db')
         res = conn.execute("SELECT username FROM USERS WHERE username='test_admin'").fetchone()
         self.assertIsNotNone(res)
