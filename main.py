@@ -12,7 +12,3 @@ def add_user(username, role):
     cursor.execute("INSERT INTO USERS (username, role) VALUES (?, ?)", (username, role))
     conn.commit()
     conn.close()
-
-if __name__ == "__main__":
-    init_db()
-    print("База данных инициализирована!")
